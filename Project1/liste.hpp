@@ -72,19 +72,13 @@ inline liste<TYPE>::liste()
 template<class TYPE>
 inline liste<TYPE>::~liste()
 {
-	while (_premier != nullptr) {
-		_courant = _premier;
-		_premier = _premier->_next;
-		delete _courant;
-	}
-	_dernier = nullptr;
-	_courant = nullptr;
+	clear();
 }
 
 template<class TYPE>
 inline bool liste<TYPE>::empty() const
 {
-	if (_premier == nullptr && _dernier == nullptr) {
+	if (_premier == nullptr) {
 		return true;
 	}
 	return false;
@@ -93,7 +87,13 @@ inline bool liste<TYPE>::empty() const
 template<class TYPE>
 inline void liste<TYPE>::clear()
 {
-	~liste();
+	while (_premier != nullptr) {
+		_courant = _premier;
+		_premier = _premier->_next;
+		delete _courant;
+	}
+	_dernier = nullptr;
+	_courant = nullptr;
 }
 
 template<class TYPE>
@@ -112,10 +112,10 @@ template<class TYPE>
 inline void liste<TYPE>::previous()
 {
 	if (_courant == nullptr) {
-		_courant = _courant->_previous;
+		_courant = _dernier;
 	}
 	else if (_courant == _premier) {
-
+		
 	}
 	else {
 		_courant = _courant->_previous;
@@ -133,7 +133,7 @@ inline void liste<TYPE>::begin()
 template<class TYPE>
 inline void liste<TYPE>::end()
 {
-	_courant = _dernier;
+	_courant = nullptr;
 }
 
 template<class TYPE>
@@ -148,7 +148,7 @@ inline bool liste<TYPE>::isBegin() const
 template<class TYPE>
 inline bool liste<TYPE>::isEnd() const
 {
-	if (_courant != _dernier || _courant ==  nullptr ) {
+	if (_courant ==  nullptr  ) {
 		return true;
 	}
 	return false;
@@ -157,7 +157,7 @@ inline bool liste<TYPE>::isEnd() const
 template<class TYPE>
 inline TYPE& liste<TYPE>::value() const
 {
-		
+	assert("_courant != nullptr");
 	std::cout << _courant->_element << std::endl;
 	return _courant->_element;
 }
