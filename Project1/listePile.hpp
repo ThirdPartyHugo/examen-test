@@ -121,31 +121,18 @@ int listePile<TYPE>::size() const {
 template <class TYPE>
 void listePile<TYPE>::insert(const TYPE& element, const TYPE& element2) {
     // Insert before the cursor by pushing onto _gauche
+    if (element != 0)
     _gauche.push(element);
 
-
-
-
-    
-
-    
-    
+    if(element2 != 0)
     _droite.push(element2);
-    
-    
-    
-    
-   
-
     
 }
 
 template <class TYPE>
 void listePile<TYPE>::erase() {
     if (!_droite.empty()) {
-        // Remove the element at the cursor by popping from _droite
         _droite.pop();
-        // Cursor moves to the next element (new top of _droite)
     }
     else {
         // Cannot erase; cursor is at the end
@@ -157,26 +144,22 @@ template <class TYPE>
 void listePile<TYPE>::print(std::ostream& out) {
     std::cout << "Gauche TOP " << _gauche.top() << std::endl;
     std::cout << "Droite TOP " << _droite.top() << std::endl;
-    // Print elements from _gauche in order
+  
     stack<TYPE> temp;
     stack<TYPE> tempGauche = _gauche;
 
-    // Reverse _gauche into temp to get the correct order
     while (!tempGauche.empty()) {
         temp.push(tempGauche.top());
         tempGauche.pop();
     }
 
-    // Print elements from temp (left side)
     while (!temp.empty()) {
         out << temp.top() << " ";
         temp.pop();
     }
 
-    // Print elements from _droite as is (right side)
     stack<TYPE> tempDroite = _droite;
 
-    // Print elements from tempDroite (right side) without reversing
     while (!tempDroite.empty()) {
         out << tempDroite.top() << " ";
         tempDroite.pop();
