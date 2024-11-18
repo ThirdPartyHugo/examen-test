@@ -157,7 +157,7 @@ inline bool liste<TYPE>::isEnd() const
 template<class TYPE>
 inline TYPE& liste<TYPE>::value() const
 {
-	assert("_courant != nullptr");
+	
 	std::cout << _courant->_element << std::endl;
 	return _courant->_element;
 }

@@ -1,6 +1,6 @@
 #include "pile.hpp"
 #include <iostream>
-#include <stdexcept>
+
 
 template <class TYPE>
 class listePile {
@@ -22,7 +22,7 @@ public:
     bool isEnd() const;    // Checks if at the end
     TYPE& value() const;   // Returns the value at the cursor
     int size() const;      // Returns the number of elements
-    void insert(const TYPE& element); // Inserts before the cursor
+    void insert(const TYPE& element, const TYPE& element2); // Inserts before the cursor
     void erase();          // Deletes the element at the cursor
     void print(std::ostream& out);    // Prints the list
     const listePile& operator=(const listePile& l); // Assignment operator
@@ -110,7 +110,7 @@ TYPE& listePile<TYPE>::value() const {
         return const_cast<TYPE&>(_droite.top());
     }
     else {
-        throw std::runtime_error("Cannot access value: cursor is at the end.");
+       
     }
 }
 
@@ -120,23 +120,25 @@ int listePile<TYPE>::size() const {
 }
 
 template <class TYPE>
-void listePile<TYPE>::insert(const TYPE& element) {
+void listePile<TYPE>::insert(const TYPE& element, const TYPE& element2) {
     // Insert before the cursor by pushing onto _gauche
     _gauche.push(element);
+
+
+
+
     
-    stack<TYPE> tempStack;
-    while (!_droite.empty()) {
-        tempStack.push(_droite.top());
-        _droite.pop();
-    }
 
-    _droite.push(element);
-
+    // Push the new element onto _droite (which is reversed)
+    
+    _droite.push(element2);
     // Reverse back into _droite
-    while (!tempStack.empty()) {
-        _droite.push(tempStack.top());
-        tempStack.pop();
-    }
+    
+    
+    
+   
+
+    
 }
 
 template <class TYPE>
@@ -148,7 +150,7 @@ void listePile<TYPE>::erase() {
     }
     else {
         // Cannot erase; cursor is at the end
-        throw std::runtime_error("Cannot erase: cursor is at the end.");
+       
     }
 }
 
@@ -173,25 +175,15 @@ void listePile<TYPE>::print(std::ostream& out) {
     // Print elements from _droite as is (right side)
     stack<TYPE> tempDroite = _droite;
 
-    // Since _droite is LIFO, reverse it to print in correct order
-    temp = stack<TYPE>(); // Clear temp
+    // Print elements from tempDroite (right side) without reversing
     while (!tempDroite.empty()) {
-        temp.push(tempDroite.top());
+        out << tempDroite.top() << " ";
         tempDroite.pop();
     }
 
-    // Print elements from temp (right side)
-    while (!temp.empty()) {
-        out << temp.top() << " ";
-        temp.pop();
-    }
-
-
-    std::cout << _gauche.top() << std::endl;
-    std::cout << _droite.top() << std::endl;
-
     out << std::endl;
 }
+
 
 template <class TYPE>
 const listePile<TYPE>& listePile<TYPE>::operator=(const listePile<TYPE>& l) {

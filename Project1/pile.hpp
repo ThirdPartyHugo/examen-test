@@ -51,14 +51,14 @@ inline void stack<TYPE>::push(const TYPE& e)
 template<class TYPE>
 inline void stack<TYPE>::pop()
 {
-    assert("_top != nullptr");
     
-    
-        cellule* temp = _top;
-        _top = _top->next;
-        delete temp;
-    
-    
+
+
+    cellule* temp = _top;
+    _top = _top->next;
+    delete temp;
+
+
 }
 
 template<class TYPE>
@@ -66,8 +66,8 @@ inline const TYPE& stack<TYPE>::top() const
 {
     if (_top != nullptr)
         return _top->element;
-    else
-        throw std::out_of_range("Stack is empty: cannot access top element");
+    
+       
 }
 
 template<class TYPE>
@@ -75,8 +75,8 @@ inline TYPE& stack<TYPE>::top()
 {
     if (_top != nullptr)
         return _top->element;
-    else
-        throw std::out_of_range("Stack is empty: cannot access top element");
+    
+       
 }
 
 template<class TYPE>

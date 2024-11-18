@@ -33,18 +33,18 @@ int main() {
     listePile<int> myList;
 
     // Insert elements
-    myList.insert(1); // List: 1
-    myList.insert(2); // List: 1 2
-    myList.insert(3); // List: 1 2 3
+    myList.insert(7,3); // List: 1
+    myList.insert(5,2); // List: 1 2
+    myList.insert(1,0); // List: 1 2 3
 
+    myList.print(cout);
     
-    
-
-    myList.print(std::cout); // Output: 1 3
 
     
 
-    std::cout << "List size: " << myList.size() << std::endl; // Output: 2
+    
+
+   
 
     // Print the list
     

@@ -63,7 +63,7 @@ inline TYPE file<TYPE>::defiler()
 {
     if (estVide())
     {
-        throw std::underflow_error("La file est vide.");
+       
     }
 
     TYPE element = this->tete();
@@ -76,7 +76,7 @@ inline const TYPE& file<TYPE>::tete() const
 {
     if (estVide())
     {
-        throw std::underflow_error("La file est vide.");
+        
     }
     return _tab[_tete];
 }
