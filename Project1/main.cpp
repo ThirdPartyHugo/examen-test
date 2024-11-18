@@ -30,23 +30,26 @@ int main() {
     
     //myList.end();
     //cout << myList.value() << endl;
-    listePile<int> lst;
+    listePile<int> myList;
 
-    // Add elements to the list
-    lst.ajouterApres(10);
-    lst.ajouterApres(20);
-    lst.ajouterApres(30);
+    // Insert elements
+    myList.insert(1); // List: 1
+    myList.insert(2); // List: 1 2
+    myList.insert(3); // List: 1 2 3
 
-    // Move cursor to the beginning
-    lst.debut();
+    
+    
 
-    // Insert before cursor
-    lst.ajouterAvant(5);
+    myList.print(std::cout); // Output: 1 3
 
-    // Advance the cursor and get current value
-    lst.avancer();
-    std::cout << "Current value: " << lst.valeurCourante() << std::endl;
+    
 
+    std::cout << "List size: " << myList.size() << std::endl; // Output: 2
+
+    // Print the list
+    
+
+   
     
 
     

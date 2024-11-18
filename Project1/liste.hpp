@@ -1,5 +1,5 @@
 #include <fstream>
-
+#include <cassert>
 
 template <class TYPE>
 class liste {
