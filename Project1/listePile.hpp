@@ -129,10 +129,10 @@ void listePile<TYPE>::insert(const TYPE& element, const TYPE& element2) {
 
     
 
-    // Push the new element onto _droite (which is reversed)
+    
     
     _droite.push(element2);
-    // Reverse back into _droite
+    
     
     
     
@@ -156,6 +156,8 @@ void listePile<TYPE>::erase() {
 
 template <class TYPE>
 void listePile<TYPE>::print(std::ostream& out) {
+    std::cout << "Gauche TOP " << _gauche.top() << std::endl;
+    std::cout << "Droite TOP " << _droite.top() << std::endl;
     // Print elements from _gauche in order
     stack<TYPE> temp;
     stack<TYPE> tempGauche = _gauche;

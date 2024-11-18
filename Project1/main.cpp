@@ -1,5 +1,4 @@
 #include <iostream>
-#include <queue>
 #include "file.hpp"
 #include "liste.hpp"
 #include "listePile.hpp"
