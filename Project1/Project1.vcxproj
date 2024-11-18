@@ -127,14 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="liste_og.hpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleFile.hpp" />
+    <ClInclude Include="doubleFile_og.hpp" />
     <ClInclude Include="file.hpp" />
+    <ClInclude Include="file_og.hpp" />
     <ClInclude Include="liste.hpp" />
     <ClInclude Include="listePile.hpp" />
     <ClInclude Include="pile.hpp" />
+    <ClInclude Include="pile_og.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

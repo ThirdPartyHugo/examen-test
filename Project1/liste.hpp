@@ -177,7 +177,6 @@ inline int liste<TYPE>::size() const
 template<class TYPE>
 inline void liste<TYPE>::insert(const TYPE& element)
 {
-	// Create a new cell containing the element
 	cellule* newCell = new cellule(element, nullptr, nullptr);
 
 	if (_courant == nullptr) {

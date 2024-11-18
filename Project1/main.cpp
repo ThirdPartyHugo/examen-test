@@ -34,22 +34,14 @@ int main() {
     //cout << myList.value() << endl;
     
 
-    deque<int> d;
-    d.push_front(1);
-    d.push_front(0);
-    d.push_front(2);
+    listePile<int> d;
 
-    std::cout << "Size: " << d.size() << std::endl; // Output: Size: 3
-    std::cout << "Front: " << d.front() << std::endl; // Output: Front: 0
-    std::cout << "Back: " << d.back() << std::endl; // Output: Back: 2
+    d.insert(5,1);
+    d.insert(6,6);
+
+    d.print(cout);
 
    
-    std::cout << "Front after pop_front(): " << d.front() << std::endl; // Output: Front after pop_front(): 1
-
-    
-    std::cout << "Back after pop_back(): " << d.back() << std::endl; // Output: Back after pop_back(): 1
-
-    cout << d.at(0);
 
 
     // Insert elements
