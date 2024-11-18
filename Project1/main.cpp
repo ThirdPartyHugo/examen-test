@@ -3,6 +3,8 @@
 #include "liste.hpp"
 #include "listePile.hpp"
 using namespace std;
+
+
 int main() {
 
     // Déclaration d'une file d'entiers
@@ -40,25 +42,5 @@ int main() {
     
 
     
-
     
-
-   
-
-    // Print the list
-    
-
-   
-    
-
-    
-    
-  
-
-    
-    
-
-    
-    
-    return 0;
 }

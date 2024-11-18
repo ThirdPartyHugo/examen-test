@@ -1,4 +1,4 @@
-﻿#include <cassert> // For exception handling
+﻿
 
 template <class TYPE>
 class stack

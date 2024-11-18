@@ -1,6 +1,5 @@
-#include "pile.hpp"
 #include <iostream>
-
+#include "pile.hpp"
 
 template <class TYPE>
 class listePile {
