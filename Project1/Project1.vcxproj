@@ -130,6 +130,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="doubleFile.hpp" />
     <ClInclude Include="file.hpp" />
     <ClInclude Include="liste.hpp" />
     <ClInclude Include="listePile.hpp" />
